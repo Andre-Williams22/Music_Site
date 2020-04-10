@@ -4,4 +4,7 @@ from . import models
 # Register your models here.
 admin.site.register(models.Song)
 admin.site.register(models.Musician)
-
+admin.site.register(models.Album)
+admin.site.register(models.Creator)
+admin.site.register(models.Subscriber)
+admin.site.register(models.Subscription)
