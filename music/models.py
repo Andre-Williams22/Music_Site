@@ -34,7 +34,7 @@ class Creator(models.Model):
 
 class Subscriber(models.Model):
     name = models.CharField(max_length=100)
-    member = models.ManyToManyField("Creator", through=("Subscription"))
+    member = models.ManyToManyField(Creator, through=("Subscription"))
 
     def __str__(self):
         return self.name
@@ -43,4 +43,7 @@ class Subscription(models.Model):
     creator = models.ForeignKey(Creator, on_delete=models.CASCADE)
     subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE)
     day_joined = models.DateField(null=True)
+
+    def __str__(self):
+        return self.creator
 
