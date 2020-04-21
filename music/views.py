@@ -26,9 +26,19 @@ def musician_detail(request, musician_id):
     musician_details = Musician.objects.get(id=musician_id)
     context = {'musician_details': musician_details,
                 'id': musician_id}
-
     return render(request, 'music/mdetails.html', context)
 
+def album_detail(request, album_id):
+    album_details = Album.objects.get(id=album_id)
+    context = {'album_details': album_details,
+                'id': album_id}
+    return render(request, 'adetails.html', context)
+
+def song_detail(request, song_id):
+    song_details = Song.objects.get(id=song_id)
+    context = {'song_details': song_details,
+                'id':song_id}
+    render(request, 'sdetails.html', context)
 
 # class AlbumDetailView(generic.DetailView):
 #     model = Album
