@@ -1,0 +1,11 @@
+{% if latest_musician %}
+
+    <ul> 
+        {% for musician in latest_musician %}
+            <li><a href="{% url 'views:detail' musician.id %}/"></a>{{ musician.musician_text }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> No musician's are available </p>
+
+{% endif %}

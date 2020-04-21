@@ -3,5 +3,14 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('about-me/', views.about)
+    
+    path('', views.index_view, name='index'),
+    path('about-me/', views.about, name='about'),
+    path('<int:musician_id>/musician', views.musician_detail, name='mdetails'),
+    path('<int:album_id>/album', views.AlbumDetail, name='adetails'),
+    path('<int:song_id>/', views.song_detail, name='sdetails'),
+    path('<int:musician_id/results', views.results_view, name='results'),
+
+    
+
 ]
