@@ -52,27 +52,27 @@ class Subscription(models.Model):
 
 # In class 
 
-class Event(models.Model):
-    name = models.CharField(max_length=50)
-    date = models.DateTimeField()
-    attendee = models.ManyToManyField(Attendee, through='ticket')
+# class Event(models.Model):
+#     name = models.CharField(max_length=50)
+#     date = models.DateTimeField()
+#     attendee = models.ManyToManyField(Attendee, through='ticket')
     
-    def __str__(self):
-        return self.name 
+#     def __str__(self):
+#         return self.name 
 
-class Attendee(model.Model):
-    name = models.CharField(max_length=50)
-    age = models.IntegerField()
+# class Attendee(model.Model):
+#     name = models.CharField(max_length=50)
+#     age = models.IntegerField()
    
 
-    def __str__(self):
-        return self.name 
+#     def __str__(self):
+#         return self.name 
 
-class Ticket(models.Model):
-    price = models.DecimalField(decimal_places=2, max_digits=6)
-    event = models.ForeignKey(Event, on_delete=models.cascade)
-    attendee = models.ForeignKey(Event, on_delete=models.cascade)
+# class Ticket(models.Model):
+#     price = models.DecimalField(decimal_places=2, max_digits=6)
+#     event = models.ForeignKey(Event, on_delete=models.cascade)
+#     attendee = models.ForeignKey(Event, on_delete=models.cascade)
 
-    def __str__(self):
-        return self.event.name + "for" + self.attendee.name
+#     def __str__(self):
+#         return self.event.name + "for" + self.attendee.name
 
