@@ -1,8 +1,8 @@
-{% if latest_musician %}
+{% if latest_musicians %}
 
     <ul> 
-        {% for musician in latest_musician %}
-            <li><a href="{% url 'views:detail' musician.id %}/"></a>{{ musician.musician_text }}</li>
+        {% for musician in latest_musicians %}
+            <li><a href="{% url 'mdetails' musician.id %}">{{ musician.name }}</a></li>
         {% endfor %}
     </ul>
 {% else %}

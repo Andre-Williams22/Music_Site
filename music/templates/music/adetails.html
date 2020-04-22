@@ -1,0 +1,9 @@
+{% if album_details %}
+
+<h1> Album Details </h1> 
+
+    <li>Album Name: <a href="{% url 'sdetails' id %}">{{ album_details.name }} </a></li>
+    <li>Publish Date: {{ album_details.publish_date }} </li>
+    <li>Artist: {{ album_details.artist }} </li>
+    <li>Genre: {{ album_details.genre }} </li>
+{% endif %}
