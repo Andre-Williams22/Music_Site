@@ -1,2 +1,13 @@
 
-<a href="{% url 'adetails' id %}">{{ musician_details }}</a>
+<h1> Musician Details </h1>
+
+{% if everything %}
+
+    {% for album in everything %}
+    <ul>
+        <li> Name: <a href="{% url 'adetails' album.id %}">{{ album.name }}</a> </li>
+
+    </ul>
+    {% endfor %}
+
+{% endif %}

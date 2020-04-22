@@ -22,9 +22,12 @@ def index_view(request):
     return render(request, 'music/index.html', context)
 
 def musician_detail(request, musician_id):
-    musician_details = Musician.objects.get(id=musician_id)
-    context = {'musician_details': musician_details,
+    musician = Musician.objects.get(id=musician_id)
+    everything = Album.objects.filter(artist=musician_id)
+    context = {'musician': musician,
                 'id': musician_id,
+                'everything': everything,
+                
             }
     return render(request, 'music/mdetails.html', context)
 
